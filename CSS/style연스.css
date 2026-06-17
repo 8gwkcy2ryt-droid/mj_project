@@ -1,0 +1,355 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'NostalgicPoliceVibe';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/Griun_PolSensibility-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+
+* {padding: 0; margin: 0; box-sizing: border-box;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+img {vertical-align: top; max-width: 100%;}
+button {cursor: pointer;}
+
+body {
+    margin: 0;
+    /* 1. 처음에는 스크롤을 숨깁니다. */
+    overflow: hidden; 
+    
+    /* 2. 스크롤을 나타나게 할 애니메이션 연결 */
+    /* 인트로(4s) + 페이드인(1.5s) = 약 5.5초 뒤에 실행 */
+    animation: allowScroll 0s 4.5s forwards;
+}
+
+.intro{ 
+position:relative;
+width:100%;
+height:100vh;
+background:red;
+
+
+}
+
+.intro> h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 70px;
+    z-index: 20;
+}
+
+@keyframes allowScroll {
+    to {
+        /* 애니메이션이 끝나면 스크롤바를 다시 보여줍니다. */
+        overflow: auto; 
+    }
+}
+
+.horizontal{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+repeating-linear-gradient(
+to bottom,
+black 0px,
+black 2px,
+transparent 2px,
+transparent 20px
+);
+
+animation:horizontal 2s forwards;
+}
+
+@keyframes horizontal{
+
+0%{
+transform:scaleY(0);
+opacity:0;
+}
+
+50%{
+transform:scaleY(1);
+opacity:1;
+}
+
+100%{
+opacity:0;
+}
+}
+
+.vertical{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:
+repeating-linear-gradient(
+to right,
+white 0px,
+white 2px,
+transparent 2px,
+transparent 20px
+);
+
+opacity:0;
+
+animation:vertical 3s 1.5s forwards;
+}
+
+
+@keyframes vertical{
+
+0%{
+opacity:0;
+transform:scaleX(0);
+}
+
+50%{
+opacity:1;
+transform:scaleX(1);
+}
+
+100%{
+opacity:0;
+}
+}
+
+.final{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:
+linear-gradient(to right,red 0%, black 40%, black 60%, red 100%);
+
+opacity:0;
+
+animation:final 1.5s 4s forwards;
+
+z-index: 30;
+
+}
+
+@keyframes final{
+
+0%{
+opacity:0;
+}
+
+
+
+100%{
+opacity:1;
+}
+
+}
+
+header {
+
+    width: 100%;
+    height: 100px;
+    padding-top: 20px;
+    padding-left: 50px;
+    border-bottom: 1px solid #333;
+    position: relative;
+}
+
+
+
+nav {
+    position: absolute;
+    top: 50px;
+    right: 10%;
+    z-index: 10;
+}
+
+nav>ul {
+    display: flex;
+    gap: 100px;
+
+}
+
+nav>ul>li>a {
+    display: block;
+    width: 150px;
+    text-align: center;
+    border: 0.5px solid #fff;
+    padding: 5px;
+    color: transparent;
+    -webkit-text-stroke: 0.3px #fff;
+}
+
+nav>ul>li:hover >a {
+    background: #333;
+    color: red;
+    border: 0.5px solid #333;
+    -webkit-text-stroke: 0.3px red;
+
+}
+
+.sub {
+    margin-top: 20px;
+    display: none;
+    
+}
+
+.sub li {
+    padding: 15px;
+   
+    width: 150px;
+    text-align: center;
+    font-size: 14px; align-items: center;
+    color: #fff;
+}
+
+
+.sub li:hover {
+    background: #333;
+    color: red;
+}
+
+.magr {
+    position: absolute;
+    left: 0;
+    top: 100;
+    width: 100%;
+    height: 400px;
+    background: rgba(0, 0,0, 0.7);
+    display: none;
+     z-index: 9;
+}
+
+main {
+    
+    width: 100%;
+    height: 100vh;
+    
+    
+}
+
+main>h1>img {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    filter: drop-shadow(0 0 5px #fff);
+    
+}
+
+main>ul>li.imoti1 {
+    position: absolute;
+    left: 100px;
+    transform: rotate(30deg);
+    filter: drop-shadow(15px 15px 15px #333);
+}
+main>ul>li.imoti1:hover {
+    transform: rotate(30deg) scale(1.15);
+    
+}
+
+main>ul>li.imoti2 {
+    position: absolute;
+    right: 100px;
+   transform: rotate(-30deg);
+   filter: drop-shadow(15px 15px 15px #333);
+}
+main>ul>li.imoti2:hover {
+    transform: rotate(-30deg) scale(1.15);
+    
+}
+
+main>ul>li.imoti3 {
+    position: absolute;
+    right: 120px;
+    top: 450px;
+    transform: rotate(-30deg);
+    filter: drop-shadow(15px 15px 15px #333);
+}
+main>ul>li.imoti3:hover {
+    transform: rotate(-30deg) scale(1.15);
+    
+}
+
+main>ul>li.imoti4 {
+    position: absolute;
+    left: 120px;
+    top: 450px;
+    filter: drop-shadow(15px 15px 15px #333);
+    transform: rotate(30deg);
+}
+main>ul>li.imoti4:hover {
+    transform: rotate(30deg) scale(1.15);
+    
+}
+
+hr {
+    margin-top: -100px;
+    border: 1px solid red;
+}
+
+section {
+    
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    padding-top: 30px;
+}
+
+section>h1 {
+    
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-size: 4em;
+    font-family: 'NostalgicPoliceVibe', sans-serif;
+
+}
+
+section ul {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+section ul li  {
+    width: 400px;
+    height: 500px;
+    background: red;
+    border: 1px solid #fff;
+    text-align: center;
+}
+
+section ul li img {
+    margin-top: 50px;
+    width: 300px;
+    height: 300px;
+    background: #333;
+
+}
+
+section ul li p {
+    font-size: 2em;
+    font-weight: bold;
+    -webkit-text-stroke: 0.5px #fff1f1;
+    margin-top: 50px;
+}
+
+section ul li:hover {
+    opacity: 0.8;
+}
+
+
+

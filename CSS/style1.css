@@ -1,0 +1,689 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'NostalgicPoliceVibe';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/Griun_PolSensibility-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+* {padding: 0; margin: 0; box-sizing: border-box;}
+li {list-style: none;}
+a {text-decoration:  none; color: inherit;}
+img {vertical-align: top; max-width: 100%;}
+button {cursor: pointer;}
+body {background: #333;}
+
+body {
+    margin: 0;
+    /* 1. 처음에는 스크롤을 숨깁니다. */
+    overflow: hidden; 
+    
+    /* 2. 스크롤을 나타나게 할 애니메이션 연결 */
+    /* 인트로(4s) + 페이드인(1.5s) = 약 5.5초 뒤에 실행 */
+    animation: allowScroll 0s 4.5s forwards;
+}
+
+.intro{ 
+position:relative;
+width:100%;
+height:100vh;
+background:black;
+
+
+}
+
+.intro> h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 1200px;
+    height: 500px;
+    z-index: 20;
+}
+
+.intro>h1>img {
+    margin-top: -100px;
+}
+
+
+
+@keyframes allowScroll {
+    to {
+        /* 애니메이션이 끝나면 스크롤바를 다시 보여줍니다. */
+        overflow: auto; 
+    }
+}
+
+.horizontal{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+repeating-linear-gradient(
+to bottom,
+white 0px,
+white 2px,
+transparent 2px,
+transparent 20px
+);
+
+animation:horizontal 2s forwards;
+}
+
+@keyframes horizontal{
+
+0%{
+transform:scaleY(0);
+opacity:0;
+}
+
+50%{
+transform:scaleY(1);
+opacity:1;
+}
+
+100%{
+opacity:0;
+}
+}
+
+.vertical{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:
+repeating-linear-gradient(
+to right,
+white 0px,
+white 2px,
+transparent 2px,
+transparent 20px
+);
+
+opacity:0;
+
+animation:vertical 3s 1.5s forwards;
+}
+
+
+@keyframes vertical{
+
+0%{
+opacity:0;
+transform:scaleX(0);
+}
+
+50%{
+opacity:1;
+transform:scaleX(1);
+}
+
+100%{
+opacity:0;
+}
+}
+
+.final{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+
+opacity:0;
+
+animation:final 1.5s 4s forwards;
+
+z-index: 30;
+
+}
+
+@keyframes final{
+
+0%{
+opacity:0;
+}
+
+
+
+100%{
+opacity:1;
+}
+
+}
+
+
+.wrap {
+    position: relative;
+}
+
+.inner {
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    padding-top: 20px;
+    padding-left: 50px;
+    border-bottom: 1px solid #333;
+    position: relative;
+    background:
+linear-gradient(to right,rgb(255, 255, 255) 0%, black 40%, black 60%, rgb(255, 255, 255) 100%);
+}
+
+header h1 img {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 0 2px white)
+          drop-shadow(0 0 2px white)
+          drop-shadow(0 0 2px white);
+}
+
+header nav {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+header nav >ul {
+    display: flex;
+    gap: 100px;
+
+}
+
+header nav>ul>li>a {
+    display: block;
+    width: 150px;
+    text-align: center;
+    
+    padding: 10px;
+    color: rgb(92, 92, 92);
+    
+}
+
+header>nav>ul>li:hover>a {
+    color: red;
+    border-bottom: 1.5px solid red;
+}
+
+.sub {
+    margin-top: 20px;
+    display: none;
+    
+}
+
+.sub li {
+    padding: 15px;
+   
+    width: 140px;
+    text-align: center;
+    font-size: 14px; align-items: center;
+    color: #fff;
+}
+
+
+.sub li:hover {
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+}
+
+.magr {
+    position: absolute;
+    left: 0;
+    top: 100;
+    width: 100%;
+    height: 270px;
+    background: rgba(0, 0,0, 0.7);
+    display: none;
+     z-index: 9;
+}
+
+.main {
+    width: 100%;
+    height: 780px;
+    background:
+linear-gradient(to right,rgb(255, 255, 255) 0%, black 40%, black 60%, rgb(255, 255, 255) 100%);
+    position: relative;
+}
+
+.main>h1>img {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    filter: drop-shadow(0 0 5px #fff);
+    
+}
+
+.main>ul>li.imoti1 {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    transform: rotate(30deg);
+    filter: drop-shadow(15px 15px 15px #333);
+}
+.main>ul>li.imoti1:hover {
+    transform: rotate(30deg) scale(1.15);
+    
+}
+
+.main>ul>li.imoti2 {
+    position: absolute;
+    right: 100px;
+     top: 50px;
+   transform: rotate(-30deg);
+   filter: drop-shadow(15px 15px 15px #333);
+}
+.main>ul>li.imoti2:hover {
+    transform: rotate(-30deg) scale(1.15);
+    
+}
+
+.main>ul>li.imoti3 {
+    position: absolute;
+    right: 120px;
+    top: 500px;
+    transform: rotate(-30deg);
+    filter: drop-shadow(15px 15px 15px #333);
+}
+.main>ul>li.imoti3:hover {
+    transform: rotate(-30deg) scale(1.15);
+    
+}
+
+.main>ul>li.imoti4 {
+    position: absolute;
+    left: 120px;
+    top: 500px;
+    filter: drop-shadow(15px 15px 15px #333);
+    transform: rotate(30deg);
+}
+.main>ul>li.imoti4:hover {
+    transform: rotate(30deg) scale(1.15);
+    
+}
+hr {
+   
+    border: 1px solid white;
+}
+
+section {
+    width: 100%;
+    height: 800px;
+    background: #000;
+    padding-top: 30px;
+    
+   
+}
+
+
+
+section>h1 {
+    
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 4em;
+    font-family: 'NostalgicPoliceVibe', sans-serif;
+
+}
+
+section ul {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+section ul li  {
+    width: 400px;
+    height: 500px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    text-align: center;
+   
+}
+
+section ul li:hover {
+    opacity: 0.7;
+}
+
+section ul li img {
+    margin-top: 50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background: #333;
+
+}
+
+section ul li p {
+    font-size: 2em;
+    font-weight: bold;
+   
+    margin-top: 50px;
+}
+
+section ul li:hover {
+    opacity: 0.8;
+}
+
+.banner {
+    width: 100%;
+    height: 600px;
+    
+    
+}
+
+.banner h1 img {
+    
+    height: 600px;
+}
+
+
+.hr2 {
+    border: 1px solid black;
+}
+
+
+.slide {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background:
+linear-gradient(to top,rgb(255, 255, 255) 0%, black 40%, black 60%, rgb(244, 244, 244) 100%);
+
+}
+
+.slide h2 img {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 0 2px white)
+          drop-shadow(0 0 2px white)
+          drop-shadow(0 0 2px white);
+}
+
+.slide h2 {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+
+}
+
+
+
+.slider-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 1200px;   /* li 3개 만큼 */
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.sliderTrack {
+    display: flex;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.slid {
+    list-style: none;
+    width: 400px; /* li 하나 크기 */
+    flex-shrink: 0;
+    
+    
+}
+
+
+
+
+
+.sliderTrack .slid img {
+    width: 150px;
+    height: 150px;
+    background: #888;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.nav-button {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.nav-button:hover {
+    background: #656565;
+    color: #fff;
+}
+
+.prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.next {
+    position: absolute;
+    right: 0;
+     top: 50%;
+    transform: translateY(-50%);
+
+}
+
+
+footer {
+    width: 100%;
+    height: 200px;
+    background: #262626;
+    position: relative;
+}
+
+footer img {
+   width: 80px;
+    height: 80px;
+    margin-top: 20px;
+    margin-left:60px;
+    margin-bottom: 20px;
+}
+
+
+footer>nav {
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    color: #fff;
+    
+}
+
+footer>nav>ul {
+    display: flex;
+    gap: 80px;
+}
+
+footer nav ul li {
+    font-family: 'KccChaSaem';
+   font-size: 14px;
+   padding: 10px;
+}
+
+footer nav ul li:hover {
+    border-bottom: 1.5px solid #fff;
+}
+
+footer p {
+    font-family: 'KccChaSaem';
+    margin-top: 10px;
+    color: #fff;
+    margin-left:60px;
+    font-size: 14px;
+}
+
+footer .sns {
+    position: absolute;
+    top: 120px;
+    right: 100px;
+}
+
+footer> .sns> ul {
+    display: flex;
+    
+}
+
+footer .sns img {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+.popupc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0,0, 0.7);
+    display: none;
+    
+}
+
+.popup {
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%,-36%);
+    background: #fff;
+    width: 1000px;
+    height: 500px;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.popup>.contents {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    
+    justify-content: center;
+    position: relative;
+}
+
+.popup>.contents img {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+   
+    width: 400px;
+    height: 470px;
+    object-fit: cover;
+    
+}
+
+.popup>.contents> .pmain {
+    margin-top: 20px;
+    margin-left: 400px;
+    text-align: center;
+    
+}
+
+.popup>.contents> .pmain > .text> h2 {
+    margin-bottom: 20px;
+}
+
+.popup>.contents>.pmain>.text>h3 {
+    margin-bottom: 50px;
+}
+
+.popup>.contents> .pmain > .text >p {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.popup>.contents> .pmain .close {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+}
+
+.popup>.contents> .pmain .close button {
+    padding:5px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+.popup>.contents> .pmain .close button:hover {
+    background: #000;
+    color: white;
+}
+
+
+/* 두번쨰 팝업 */
+
+.popupc2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0,0, 0.7);
+    display: none;
+    
+}
+
+
+
+.popupc2>.popup>.contents>img {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+   
+    width: 400px;
+    height: 470px;
+    object-fit: cover;
+    
+}
+
+/* 세번쨰 팝업 */
+
+.popupc3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0,0, 0.7);
+    display: none;
+    
+}
+
+
+
+
+
+
+
+
+
