@@ -176,8 +176,7 @@ header {
     padding-left: 50px;
     border-bottom: 1px solid #333;
     position: relative;
-    background:
-linear-gradient(to right,rgb(255, 255, 255) 0%, black 40%, black 60%, rgb(255, 255, 255) 100%);
+    background:#80aad3;
 }
 
 header h1 img {
@@ -252,8 +251,8 @@ header>nav>ul>li:hover>a {
 .main {
     width: 100%;
     height: 780px;
-    background:
-linear-gradient(to right,rgb(255, 255, 255) 0%, black 40%, black 60%, rgb(255, 255, 255) 100%);
+    background: #c0e6fd;
+
     position: relative;
 }
 
